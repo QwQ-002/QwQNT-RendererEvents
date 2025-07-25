@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
 
-declare namespace QwQNTTemplate {
-  const greeting: () => void;
+declare namespace RendererEvents {
+  const onSettingsWindowCreated: (callback: () => void) => void;
 }

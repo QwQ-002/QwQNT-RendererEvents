@@ -1,10 +1,9 @@
-import { ipcMain } from 'electron';
+qwqnt.main.hooks.whenBrowserWindowCreated.peek(async window => {
+  const currentWindowRouting = await window.webContents.getRouting();
 
-ipcMain.on('QwQNTTemplate.greeting', () => {
-  alert('Main');
-});
-
-qwqnt.main.hooks.whenBrowserWindowCreated.peek(window => {
-  console.log('A window has just been created');
-  console.log(window);
+  if(currentWindowRouting){
+    if(currentWindowRouting === '/setting/settings/common'){
+      window.webContents.send('RendererEvents.onSettingsWindowCreated');
+    }
+  }
 });

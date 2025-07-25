@@ -1,3 +1,0 @@
-alert('Renderer');
-
-QwQNTTemplate.greeting();

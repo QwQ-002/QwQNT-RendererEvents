@@ -1,8 +1,8 @@
 {
   "$schema": "./plugin.schema.json",
-  "name": "qwqnttemplate-vite-pnpm",
+  "name": "qwqnt-renderer_events",
   "version": "1.0.0",
-  "description": "A plugin template for QwQNT, powered by Vite & Typescript",
+  "description": "To provide QwQNT plugins some renderer events.",
   "type": "module",
   "main": "./main/index.js",
   "scripts": {
@@ -31,9 +31,9 @@
   },
   "packageManager": "pnpm@10.13.1",
   "qwqnt": {
-    "name": "QwQNT 插件模板",
+    "name": "Renderer 事件",
     "inject": {
-      "preload": "./preload/index.mjs",
+      "preload": "./preload/index.cjs",
       "renderer": "./renderer/index.js"
     }
   }

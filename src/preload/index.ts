@@ -1,7 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
-contextBridge.exposeInMainWorld('QwQNTTemplate', {
-  greeting: () => {
-    ipcRenderer.send('QwQNTTemplate.greeting');
-  }
+contextBridge.exposeInMainWorld('RendererEvents', {
+  onSettingsWindowCreated: (callback: () => void) => {
+    ipcRenderer.on('RendererEvents.onSettingsWindowCreated', callback);
+  },
 });
