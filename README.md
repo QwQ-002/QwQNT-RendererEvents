@@ -15,12 +15,24 @@ RendererEvents.onSettingsWindowCreated(() => {
 });
 ```
 
+在 Renderer 中，使用 `RendererEvents.onMessageWindowCreated` 对主窗口的创建进行监听。
+
+下面是一个实例：
+
+```typescript
+// renderer
+RendererEvents.onMessageWindowCreated(() => {
+  alert('message');
+});
+```
+
 对于使用 Typescript 编写插件的开发者，你可能需要将 `RendererEvents` 写入 `global.d.ts` 中。
 
 ```typescript
 // global
 declare namespace RendererEvents {
   const onSettingsWindowCreated: (callback: () => void) => void;
+  const onMessageWindowCreated: (callback: () => void) => void;
 }
 ```
 
