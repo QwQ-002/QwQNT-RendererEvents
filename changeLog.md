@@ -1,3 +1,3 @@
-# 1.0.0
+# 1.1.0
 
-1. 添加 `onSettingsWindowCreated` 事件
+1. 添加 `onMessageWindowCreated` 事件
