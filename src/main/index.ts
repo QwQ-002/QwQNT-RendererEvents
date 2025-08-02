@@ -5,5 +5,8 @@ qwqnt.main.hooks.whenBrowserWindowCreated.peek(async window => {
     if(currentWindowRouting === '/setting/settings/common'){
       window.webContents.send('RendererEvents.onSettingsWindowCreated');
     }
+    if(currentWindowRouting === '/main/message'){
+      window.webContents.send('RendererEvents.onMessageWindowCreated');
+    }
   }
 });
