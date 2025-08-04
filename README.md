@@ -6,6 +6,8 @@
 
 在 Renderer 中，使用 `RendererEvents.onSettingsWindowCreated` 对设置窗口的创建进行监听。
 
+对于一次性的监听，请使用 `RendererEvents.onSettingsWindowCreatedOnce` 。
+
 下面是一个实例：
 
 ```typescript
@@ -16,6 +18,8 @@ RendererEvents.onSettingsWindowCreated(() => {
 ```
 
 在 Renderer 中，使用 `RendererEvents.onMessageWindowCreated` 对主窗口的创建进行监听。
+
+对于一次性的监听，请使用 `RendererEvents.onMessageWindowCreatedOnce` 。
 
 下面是一个实例：
 
