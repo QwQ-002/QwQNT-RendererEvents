@@ -1,3 +1,4 @@
-# 1.1.0
+# 1.1.1
 
-1. 添加 `onMessageWindowCreated` 事件
+1. 支持一次性监听器
+2. 打包为 commonjs
