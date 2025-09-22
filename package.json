@@ -1,39 +1,43 @@
 {
-  "$schema": "./plugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/QwQ-002/types/main/plugin.schema.json",
   "name": "qwqnt-renderer_events",
   "version": "1.1.1",
   "description": "To provide QwQNT plugins some renderer events.",
   "type": "commonjs",
-  "main": "./main/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix src/**/* --ext .js,.ts",
     "build": "electron-vite build"
   },
-  "author": "Adpro",
+  "author": "風間青祢",
   "license": "MIT",
   "devDependencies": {
     "@electron-toolkit/eslint-config-ts": "^3.1.0",
-    "@electron-toolkit/tsconfig": "^1.0.1",
-    "@eslint/js": "^9.32.0",
-    "@types/node": "^24.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "electron": "^37.2.5",
-    "electron-vite": "^4.0.0",
-    "eslint": "^9.32.0",
-    "jiti": "^2.5.1",
-    "typescript-eslint": "^8.38.0",
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@eslint/js": "^9.36.0",
+    "@qwqnt/types": "github:QwQ-002/types",
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "electron": "^38.1.2",
+    "electron-vite": "^4.0.1",
+    "eslint": "^9.36.0",
+    "jiti": "^2.6.0",
+    "typescript-eslint": "^8.44.1",
     "unplugin-zip-pack": "^1.0.3",
-    "vite": "^7.0.6",
-    "vite-plugin-checker": "^0.10.2",
+    "vite": "^7.1.7",
+    "vite-plugin-checker": "^0.10.3",
     "vite-plugin-cp": "^6.0.3"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.17.1",
   "qwqnt": {
     "name": "Renderer 事件",
     "inject": {
+      "main": "./main/index.js",
       "preload": "./preload/index.js"
+    },
+    "dependencies": {
+      "ipc_interceptor": "^1.0.0"
     }
   }
 }

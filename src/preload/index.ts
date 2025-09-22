@@ -1,6 +1,9 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('RendererEvents', {
+  onLogin: (callback: (uid?: string) => void) => {
+    ipcRenderer.on('RendererEvents.onLogin', (_, uid: string) => callback(uid));
+  },
   onSettingsWindowCreated: (callback: () => void) => {
     ipcRenderer.on('RendererEvents.onSettingsWindowCreated', callback);
   },

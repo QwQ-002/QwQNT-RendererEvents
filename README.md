@@ -1,6 +1,8 @@
 # QwQNT-RendererEvents
 
-本插件是 QwQNT 框架下，用于为 Renderer 提供一系列窗口事件的插件。
+本插件是 QwQNT 框架下，用于为 Renderer 提供一系列事件的插件。
+
+本插件使用 `IpcInterceptor` 插件作为前置。
 
 ## 使用
 
@@ -30,13 +32,27 @@ RendererEvents.onMessageWindowCreated(() => {
 });
 ```
 
+在 Renderer 中，使用 `RendererEvents.onLogin` 对用户登录进行监听。
+
+下面是一个实例：
+
+```typescript
+// renderer
+RendererEvents.onLogin((uid: string) => {
+  alert(uid);
+});
+```
+
 对于使用 Typescript 编写插件的开发者，你可能需要将 `RendererEvents` 写入 `global.d.ts` 中。
 
 ```typescript
 // global
 declare namespace RendererEvents {
+  const onLogin: (callback: (uid?: string) => void) => void;
   const onSettingsWindowCreated: (callback: () => void) => void;
+  const onSettingsWindowCreatedOnce: (callback: () => void) => void;
   const onMessageWindowCreated: (callback: () => void) => void;
+  const onMessageWindowCreatedOnce: (callback: () => void) => void;
 }
 ```
 
